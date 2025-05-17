@@ -1,0 +1,318 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/books
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"title":"Qui ex.","isbn":"9797559990586","published_year":"1982","description":"Consequatur facere repellendus consectetur deserunt veniam at. Amet delectus ut ipsa vel velit. Occaecati quia tempore explicabo eum sed dolore. Omnis est possimus qui qui cupiditate sed possimus sunt.","created_at":"2025-05-17T09:42:37.000000Z","updated_at":"2025-05-17T09:42:37.000000Z"},{"id":2,"title":"Saepe laborum vel.","isbn":"9797948063846","published_year":"2023","description":"Velit sunt aut similique sint repellendus. Omnis nemo similique cupiditate est. Eius eos assumenda temporibus molestiae. Sit libero sed quia rerum itaque nobis recusandae.","created_at":"2025-05-17T09:42:37.000000Z","updated_at":"2025-05-17T09:42:37.000000Z"},{"id":3,"title":"Tenetur ipsum maiores vel.","isbn":"9791119357697","published_year":"2007","description":"Suscipit explicabo consectetur sapiente earum aliquam quo molestiae eaque. Neque vel sapiente quaerat labore. Alias porro deleniti illum non voluptatum. Animi dolorem nostrum est facilis error.","created_at":"2025-05-17T09:42:37.000000Z","updated_at":"2025-05-17T09:42:37.000000Z"},{"id":4,"title":"Magnam quod molestias ut.","isbn":"9787714264324","published_year":"1988","description":"Est ex quam consequuntur in sint et. Sit quo voluptates dicta facere. Voluptas in et tenetur modi quidem et similique. Nobis aut aut voluptas autem voluptatem.","created_at":"2025-05-17T09:42:37.000000Z","updated_at":"2025-05-17T09:42:37.000000Z"},{"id":5,"title":"Rerum dignissimos mollitia.","isbn":"9788623701887","published_year":"2009","description":"Optio architecto ut cupiditate ea occaecati iure officia. Veritatis omnis suscipit delectus sunt porro.","created_at":"2025-05-17T09:42:37.000000Z","updated_at":"2025-05-17T09:42:37.000000Z"}],"links":{"first":"http:\/\/localhost\/api\/v1\/books?page=1","last":"http:\/\/localhost\/api\/v1\/books?page=10","prev":null,"next":"http:\/\/localhost\/api\/v1\/books?page=2"},"meta":{"current_page":1,"from":1,"last_page":10,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/v1\/books?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/v1\/books?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/v1\/books?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/v1\/books?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/v1\/books?page=5","label":"5","active":false},{"url":"http:\/\/localhost\/api\/v1\/books?page=6","label":"6","active":false},{"url":"http:\/\/localhost\/api\/v1\/books?page=7","label":"7","active":false},{"url":"http:\/\/localhost\/api\/v1\/books?page=8","label":"8","active":false},{"url":"http:\/\/localhost\/api\/v1\/books?page=9","label":"9","active":false},{"url":"http:\/\/localhost\/api\/v1\/books?page=10","label":"10","active":false},{"url":"http:\/\/localhost\/api\/v1\/books?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/v1\/books","per_page":5,"to":5,"total":50}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/books
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: vmqeopfuudtdsufvyvddq
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      author_id:
+        name: author_id
+        description: 'The <code>id</code> of an existing record in the authors table.'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      isbn:
+        name: isbn
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      published_year:
+        name: published_year
+        description: 'Must be 4 digits.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Dolores dolorum amet iste laborum eius est dolor.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      title: vmqeopfuudtdsufvyvddq
+      author_id: consequatur
+      isbn: consequatur
+      published_year: 17
+      description: 'Dolores dolorum amet iste laborum eius est dolor.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/books/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the book.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"title":"Qui ex.","isbn":"9797559990586","published_year":"1982","description":"Consequatur facere repellendus consectetur deserunt veniam at. Amet delectus ut ipsa vel velit. Occaecati quia tempore explicabo eum sed dolore. Omnis est possimus qui qui cupiditate sed possimus sunt.","created_at":"2025-05-17T09:42:37.000000Z","updated_at":"2025-05-17T09:42:37.000000Z"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/books/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the book.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: vmqeopfuudtdsufvyvddq
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      author_id:
+        name: author_id
+        description: 'The <code>id</code> of an existing record in the authors table.'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      isbn:
+        name: isbn
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      published_year:
+        name: published_year
+        description: 'Must be 4 digits.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Dolores dolorum amet iste laborum eius est dolor.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      title: vmqeopfuudtdsufvyvddq
+      author_id: consequatur
+      published_year: 17
+      description: 'Dolores dolorum amet iste laborum eius est dolor.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/books/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the book.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
