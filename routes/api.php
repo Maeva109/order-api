@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\AuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('v1')->group(function () {
+    // Routes protégées (nécessitent une authentification)
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('logout', [\App\Http\Controllers\API\AuthController::class, 'logout']);
+        Route::post('/authors', [AuthorController::class, 'store']);
+        Route::put('/authors/{author}', [AuthorController::class, 'update']);
+        Route::delete('/authors/{author}', [AuthorController::class, 'destroy']);
     });
-
-    Route::apiResource('books', \App\Http\Controllers\API\BooksController::class);
-
+    Route::get('books', [\App\Http\Controllers\API\BooksController::class, 'index'])-> middleware('auth:sanctum');
+   // Route::apiResource('books', \App\Http\Controllers\API\BooksController::class);
+// Routes publiques (accès sans authentification)
     Route::post('register', [\App\Http\Controllers\API\AuthController::class, 'register']);
     Route::post('login', [\App\Http\Controllers\API\AuthController::class, 'login'])->name('login');
+    Route::get('/authors', [AuthorController::class, 'index']);
+    Route::get('/authors/{author}', [AuthorController::class, 'show']);
 });
+
+    
+  
+
+
+  
